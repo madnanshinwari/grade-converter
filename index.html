@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grade Converter</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Grade Converter</h1>
+      <input type="number" id="marks" placeholder="Enter marks" />
+      <button onclick="convertToGrade()">Convert</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function convertToGrade() {
+        const marks = parseFloat(document.getElementById("marks").value);
+
+        if (!isNaN(marks)) {
+          let grade = "";
+
+          if (marks >= 90) {
+            grade = "A+";
+          } else if (marks >= 80) {
+            grade = "A";
+          } else if (marks >= 70) {
+            grade = "B";
+          } else if (marks >= 60) {
+            grade = "C";
+          } else if (marks >= 50) {
+            grade = "D";
+          } else {
+            grade = "F";
+          }
+
+          document.getElementById("result").textContent = `Grade: ${grade}`;
+        } else {
+          document.getElementById("result").textContent =
+            "Please enter valid marks.";
+        }
+      }
+    </script>
+  </body>
+</html>
